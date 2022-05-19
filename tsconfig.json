@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "target": "ES2021",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      ":/*": ["./packages/*"]
+    }
+  },
+  "include": ["./packages/*/src/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.d.ts"]
+}

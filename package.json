@@ -1,0 +1,56 @@
+{
+  "name": "online-balls",
+  "version": "0.1.0",
+  "description": "Online Balls application",
+  "author": "michaelbr",
+  "dependencies": {
+    "express": "^4.17.3",
+    "minimist": "^1.2.6"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.5.0",
+    "@parcel/core": "^2.5.0",
+    "@types/express": "^4.17.13",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^16.11.33",
+    "@types/parcel-env": "0.0.1",
+    "fs-extra": "^10.1.0",
+    "parcel": "^2.5.0",
+    "typescript": "^4.6.4"
+  },
+  "targets": {
+    "frontend": {
+      "source": "packages/frontend/src/frontend.html",
+      "distDir": "dist/frontend",
+      "context": "browser",
+      "engines": {
+        "browsers": "> 5%, last 2 versions, not dead"
+      },
+      "includeNodeModules": true
+    },
+    "backend": {
+      "source": "packages/backend/src/backend.ts",
+      "distDir": "dist/backend",
+      "context": "node",
+      "engines": {
+        "node": ">= 16"
+      },
+      "includeNodeModules": true
+    }
+  },
+  "alias": {
+    ":": "./packages"
+  },
+  "scripts": {
+    "watch": "node cli.mjs watch",
+    "build": "node cli.mjs build",
+    "check": "npx tsc --noEmit",
+    "old_watch:frontend": "parcel watch --target frontend",
+    "old_watch:backend": "parcel watch --target backend",
+    "old_serve:frontend": "parcel serve --target frontend",
+    "old_build": "npm run build:frontend & npm run build:backend",
+    "old_build:frontend": "parcel build --target frontend",
+    "old_build:backend": "parcel build --target backend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
